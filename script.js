@@ -8,12 +8,14 @@ const getSum = () => {
 	return acc + (Number(el.textContent) || 0);
 }, 0);
 
-	const table=document.querySelector("table")
-	const newRow=document.createElement("tr")
-	const newData=document.createElement("td")
-	newData.innerText=`${total}`
-	table.appendChild(newRow)
-	newRow.appendChild(newData)
+	let ans = document.createElement("td");
+		ans.id = "ans";
+
+		const row = document.createElement("tr");
+		row.appendChild(ans);
+
+		document.querySelector("table").appendChild(row);
+	ans.innerText = total;
 };
 
 getSumBtn.addEventListener("click", getSum);
